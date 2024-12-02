@@ -15,15 +15,20 @@ spring:
     password: root
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: validate
     properties:
       hibernate:
+        show_sql: true
         format_sql: true
-        show_sql: true    # 쿼리 볼수 있게
-    open-in-view: false
-
+        jdbc:
+          batch_size: 1000
+        order_updates: true
+        order_inserts: true
+        generate_statistics: false  # 실행 오래걸려서일단 false로
+      open-in-view: false  # 실행오래걸려서 false로
+      
   # 파일 업로드 설정 (나중에 필요함)
   servlet:
     multipart:
