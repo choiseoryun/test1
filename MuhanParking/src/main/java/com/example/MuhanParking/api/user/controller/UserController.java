@@ -11,10 +11,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
-
-// api/user/controller/UserController.java
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/user")
@@ -25,10 +25,14 @@ public class UserController {
     // 회원가입
     @PostMapping("/auth/signup")
     public ResponseDto<Void> signUp(@Valid @RequestBody SignUpRequest request) {
-        userService.signUp(request);
-        return ResponseDto.success("회원가입이 완료되었습니다", null);
+        try {
+            userService.signUp(request);
+            return ResponseDto.success("회원가입이 완료되었습니다", null);
+        } catch (Exception e) {
+            log.error("회원가입 실패: ", e);  // 에러 로그 추가
+            return ResponseDto.fail(e.getMessage());
+        }
     }
-
     // 로그인
     @PostMapping("/auth/login")
     public ResponseDto<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
