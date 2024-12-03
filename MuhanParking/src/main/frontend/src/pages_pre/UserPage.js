@@ -6,9 +6,10 @@ function UserPage() {
   const [users, setUsers] = useState([]); // 초기 상태를 빈 배열로 설정
 
   useEffect(() => {
-    axios.get('http://localhost:3001/user')
+    axios.get('/api/v1/admin/users')
       .then(response => {
-        setUsers(response.data); 
+        setUsers(response.data);
+        console.log(response.data)
       })
       .catch(error => {
         console.error("서버 요청 중 오류 발생:", error);
@@ -21,12 +22,12 @@ function UserPage() {
       <pre>
         {Object.keys(users).map((key, index) => (
           <div>
-            name: {users[key].name} <br />
-            email: {users[key].email}
-            <form action={`/user/${users[key].user_num}?_method=DELETE`} method="POST" style={{ display: 'inline' }}>
+            이름: {users[key].name} <br />
+            학번: {users[key].studentId}
+            <form action={`/api/v1/admin/users/${users[key].id}?_method=DELETE`} method="POST" style={{ display: 'inline' }}>
               <input type="submit" className="btn delete" title="삭제" value="X" />
             </form>
-            <Link to={`/user/${users[key].user_num}`}>수정</Link>
+            <Link to={`/api/v1/admin/users/${users[key].id}`}>수정</Link>
           </div>
         ))}
       </pre>
