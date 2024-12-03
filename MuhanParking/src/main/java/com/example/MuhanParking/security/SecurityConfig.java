@@ -9,7 +9,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -24,11 +24,12 @@ public class SecurityConfig {
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> {
-                    auth
-                            .requestMatchers("/api/v1/user/auth/**").permitAll()  // 회원가입, 로그인 관련 URL은 모두 허용
-                            .requestMatchers("/api/v1/user/**").hasRole("USER")   // 나머지 사용자 관련 URL은 인증 필요
+                    auth.requestMatchers("/api/user/auth/**").permitAll()
+                            .requestMatchers("/api/user/**").hasRole("USER")
                             .anyRequest().authenticated();
-                });
+                })
+                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
+                        UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MuhanParking.iml" filepath="$PROJECT_DIR$/.idea/MuhanParking.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MuhanParking.MuhanParking.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MuhanParking.MuhanParking.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MuhanParking.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MuhanParking.main.iml" />
     </modules>
   </component>
 </project>
