@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 
 function Login() {
-    const [username, setUsername] = useState('');  // id에서 username으로 변경
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
@@ -38,7 +38,7 @@ function Login() {
                 <input
                     autocomplete="off"
                     type="text"
-                    name="username"  // name 속성도 'username'으로 수정
+                    name="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)} // 상태 업데이트
                 />
