@@ -60,6 +60,12 @@ public class User {
     @Column(name = "last_login")
     private LocalDateTime lastLogin;
 
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt;
+
     @Builder
     public User(String username, String password, String name, String phone,
                 String address, String gender, Integer studentId,
@@ -73,6 +79,8 @@ public class User {
         this.studentId = studentId;
         this.department = department;
         this.birthDate = birthDate;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     public void updateLastLogin() {
