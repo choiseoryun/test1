@@ -1,6 +1,5 @@
 package com.example.MuhanParking.api.user.model;
 
-import com.example.MuhanParking.model.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,9 +18,8 @@ public class RegularParkingApplication {
     @Column(name = "application_id")
     private Long applicationId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
     @Column(name = "student_year", nullable = false)
     private Integer studentYear;
@@ -49,10 +47,6 @@ public class RegularParkingApplication {
     @Column(name = "evaluation_score")
     private Integer evaluationScore;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lot_id")
-    private ParkingLot parkingLot;
-
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -61,7 +55,6 @@ public class RegularParkingApplication {
         createdAt = LocalDateTime.now();
     }
 
-    // Enum classes
     public enum TransportationType {
         BUS, SUBWAY
     }
