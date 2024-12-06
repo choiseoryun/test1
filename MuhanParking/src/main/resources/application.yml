@@ -10,16 +10,17 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/parking?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/muhanparking?serverTimezone=Asia/Seoul
     username: root
-    password: chltjfbs23!
+    password: root
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate  # update에서 validate로 변경
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
         show_sql: true
         format_sql: true
         jdbc:

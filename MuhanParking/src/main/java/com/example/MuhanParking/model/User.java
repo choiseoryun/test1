@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-// model/User.java
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
