@@ -41,5 +41,4 @@ logging:
     org.hibernate.SQL: debug  # 콘솔에 쿼리 보이게
     com.example.muhanparking: debug  # 패키지는 debug 레벨로
 
-jwt:
-  secret: "your-secret-key-please-change-this-to-something-secure" # 실제로는 더 복잡한 값 사용해야 함
+secret: "your-secret-key-please-change-this-to-something-secure" # 실제로는 더 복잡한 값 사용해야 함
