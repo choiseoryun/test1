@@ -25,7 +25,9 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/api/v1/user/admin/**").permitAll()
-                            .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                            .requestMatchers("/api/v1/user/auth/**").permitAll()
+                            .requestMatchers("/api/v1/admin/**").permitAll()
+                            .requestMatchers("/api/v1/iot/**").permitAll()
                             .requestMatchers("/api/user/**").hasRole("USER")
                             .anyRequest().authenticated();
                 })
