@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7bce82e0-856a-4712-8860-71616a8e9955" name="학과서버">
+        <fileTransfer accessType="SFTP" host="ceprj.gachon.ac.kr" port="22" sshConfigId="af6581fb-032f-4a92-bf08-da334fca1ffd" sshConfig="t24310@ceprj.gachon.ac.kr:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

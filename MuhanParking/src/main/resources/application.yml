@@ -10,9 +10,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/muhanparking?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/parking?serverTimezone=Asia/Seoul
     username: root
-    password: root
+    password: chltjfbs23!
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -41,5 +41,5 @@ logging:
     org.springframework.security: debug
     org.hibernate.SQL: debug  # 콘솔에 쿼리 보이게
     com.example.muhanparking: debug  # 패키지는 debug 레벨로
-
-secret: "your-secret-key-please-change-this-to-something-secure" # 실제로는 더 복잡한 값 사용해야 함
+jwt:
+  secret: "your-secret-key-please-change-this-to-something-secure" # 실제로는 더 복잡한 값 사용해야 함

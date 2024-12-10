@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="ceprj.gachon.ac.kr" id="af6581fb-032f-4a92-bf08-da334fca1ffd" port="22" nameFormat="DESCRIPTIVE" username="t24310" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
