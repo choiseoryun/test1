@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 60010
   servlet:
     context-path: /
     encoding:
@@ -10,31 +10,27 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/muhanparking?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/muhanparking
     username: root
     password: root
+    maximum-pool-size: 10
+    minimum-idle: 5
+    connection-timeout: 30000
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: validate  # update에서 validate로 변경
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        show_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
         jdbc:
           batch_size: 1000
         order_updates: true
         order_inserts: true
-        generate_statistics: false  # 실행 오래걸려서일단 false로
-      open-in-view: false  # 실행오래걸려서 false로
+        generate_statistics: false
+    show-sql: true
 
-  # 파일 업로드 설정 (나중에 필요함)
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
 
 logging:
   level:
