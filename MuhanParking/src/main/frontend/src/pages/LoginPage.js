@@ -13,10 +13,8 @@ function LoginPage() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const data = {
-            username: username,
-            password: password
-        };
+        const data = { username: username, password: password };
+        console.log(data)
 
         fetch('/api/v1/user/auth/login', {
             method: 'POST',
