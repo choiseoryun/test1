@@ -4,11 +4,9 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import UserInfo from './pages/UserInfo';
 import Navbar from './components/nav';
-import MainPage from './pages/MainPage';
+import MainPagsse from './pages/MainPage';
 import ParkingAppPage from './pages/ParkingAppPage'
 import UserDetail from './pages/UserDetail';
-import AppDetail from './pages/AppDetail';
-import Selectors from './pages/ParkingSelectorPage';
 import ParkingIots from './pages/ParkingIotsPage';
 import AIPages from './pages/AIPage';
 import IoTPage from './pages/IoTPage';
@@ -26,13 +24,11 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<LoginPage />} />
                     <Route path="/register" element={<RegisterPage />} />
-                    <Route path='/mainPage' element={<MainPage />} />
+                    <Route path='/mainPage' element={<MainPagsse />} />
                     <Route path="/users" element={<UserInfo />} />
                     <Route path='/users/hwan' element={<UserDetail />} />
                     <Route path='/users/edit' element={<UserEdit />} />
                     <Route path='/applicants' element={<ParkingAppPage />} />
-                    <Route path='/applicants/deceit' element={<AppDetail />} />
-                    <Route path='/selectors' element={<Selectors />} />
                     <Route path='/parking-Iots' element={<ParkingIots />} />
                     <Route path='/ai' element={<AIPages />} />
                     <Route path='/ai/parking-model' element={<ParkingModel />} />

@@ -1,32 +1,35 @@
 import React from "react";
-import axios from "axios";
 
-function Traffic() {
+function analyze() {
     return (
         <div style={styles.container}>
             <header style={{
                 textAlign: 'center',
                 marginBottom: '20px',
             }}>
-                <h1>IoT 트래픽 모니터링</h1>
+                <h1>통계 및 분석</h1>
             </header>
             {/* {loading && <p>데이터를 불러오는 중...</p>}
             {error && <p style={styles.error}>{error}</p>} */}
             <table style={styles.table}>
                 <thead>
                     <tr>
-                        <th style={styles.th}>IoT 번호</th>
-                        <th style={styles.th}>IoT 상태</th>
-                        <th style={styles.th}>IoT 위치 정보</th>
-                        <th style={styles.th}>트래픽 정보</th>
+                        <th style={styles.th}>공간 번호</th>
+                        <th style={styles.th}>분석 상태</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style={styles.td}>2</td>
-                        <td style={styles.td}>ACTIVE</td>
-                        <td style={styles.td}>Latitude: 37.566535, Longitude: 126.977969</td>
-                        <td style={styles.td}>"inbound": 3000, "outbound": 2000</td>
+                        <td style={styles.td}>AI-A</td>
+                        <td style={styles.td}><img src="A_secssion_test.jpg" style={{width: "360px", height: "180px" }}/></td>
+                    </tr>
+                    <tr>
+                        <td style={styles.td}>AI-B</td>
+                        <td style={styles.td}><img src="B_secssion_test.jpg" style={{width: "360px", height: "180px" }}/></td>
+                    </tr>
+                    <tr>
+                        <td style={styles.td}>AI-C</td>
+                        <td style={styles.td}><img src="C_secssion_test.png" style={{width: "360px", height: "180px" }}/></td>
                     </tr>
                 </tbody>
             </table>
@@ -40,7 +43,7 @@ function Traffic() {
                     © 2024 가천대학교 P-실무프로젝트 무한이 주차비서 관리자 대시보드 <br />
                     Dev : Team SSHG
                 </p>
-        </footer>
+            </footer>
         </div>
     );
 }
@@ -70,6 +73,15 @@ const styles = {
       color: 'red',
       fontWeight: 'bold',
     },
+    button: {
+        padding: '10px 15px',
+        fontSize: '16px',
+        color: '#fff',
+        background: '#00C6FF',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+    },
 };
 
-export default Traffic;
+export default analyze;
