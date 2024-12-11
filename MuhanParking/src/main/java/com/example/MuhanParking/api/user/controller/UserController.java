@@ -8,12 +8,10 @@ import com.example.MuhanParking.api.user.service.UserService;
 import com.example.MuhanParking.dto.ResponseDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import lombok.extern.slf4j.Slf4j;
-
-import java.util.Map;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -62,14 +60,6 @@ public class UserController {
         return ResponseDto.success("회원정보가 수정되었습니다", null);
     }
 
-    // 알림 설정 변경
-    @PutMapping("/notification")
-    public ResponseDto<Void> updateNotification(
-            @AuthenticationPrincipal UserDetails userDetails,
-            @RequestBody Map<String, Boolean> request) {
-        userService.updateNotificationSetting(userDetails.getUsername(), request.get("enabled"));
-        return ResponseDto.success("알림 설정이 변경되었습니다", null);
-    }
     @PostMapping("/auth/find-username")
     public ResponseDto<FindUsernameResponse> findUsername(@Valid @RequestBody FindUsernameRequest request) {
         FindUsernameResponse response = userService.findUsername(request);
