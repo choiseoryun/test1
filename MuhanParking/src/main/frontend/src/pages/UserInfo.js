@@ -26,7 +26,6 @@ function UserPage() {
                 <tr>
                     <th style={styles.th}>학번</th>
                     <th style={styles.th}>이름</th>
-                    <th style={styles.th}>정기주차 여부</th>
                     <th style={styles.th}></th>
                 </tr>
                 </thead>
@@ -36,7 +35,6 @@ function UserPage() {
                     <tr>
                         <td style={styles.td}>{users[key].studentId}</td>
                         <td style={styles.td}>{users[key].name}</td>
-                        <td style={styles.td}>X</td>
                         <td><a href={`/users/${users[key].name}`}>상세</a></td>
                     </tr>
                 ))}

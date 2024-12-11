@@ -40,25 +40,13 @@ const MainPage = () => {
                 maxWidth: '1200px', // 중앙 정렬을 위해 최대 너비 설정
                 margin: '0 auto', // 가운데 정렬
             }}>
-                <Link to="/applicants" style={cardStyle}>
-                    <h2>정기주차 신청자 조회</h2>
-                    <p>신청자의 정보를 확인하고 관리합니다.</p>
-                </Link>
                 <Link to="/users" style={cardStyle}>
                     <h2>사용자 정보 조회</h2>
                     <p>등록된 사용자 정보를 확인합니다.</p>
                 </Link>
-                <Link to="/selectors" style={cardStyle}>
-                    <h2>정기주차 선정자 조회</h2>
-                    <p>선정된 사용자 명단을 확인합니다.</p>
-                </Link>
                 <Link to="/parking-Iots" style={cardStyle}>
                     <h2>주차공간 모니터링</h2>
                     <p>실시간 주차공간 정보를 확인합니다.</p>
-                </Link>
-                <Link to="/ai/parking-model" style={cardStyle}>
-                    <h2>인공지능 관련 조회</h2>
-                    <p>AI와 관련된 데이터 및 분석 결과를 확인합니다.</p>
                 </Link>
                 <Link to="/iot" style={cardStyle}>
                     <h2>IoT 관련 조회</h2>
