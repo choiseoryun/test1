@@ -14,7 +14,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// api/user/service/UserService.java
 @Service
 @RequiredArgsConstructor  // final 필드에 대한 생성자 자동 생성
 @Transactional(readOnly = true)
@@ -22,7 +21,7 @@ public class UserService {
 
     private final UserRepository userRepository;  // repository 주입
     private final PasswordEncoder passwordEncoder;  // security config에서 빈으로 등록한거 주입
-    private final JwtTokenProvider jwtTokenProvider;  // 이것도 추가해야해!
+    private final JwtTokenProvider jwtTokenProvider;
 
     // 회원가입
     @Transactional
@@ -98,13 +97,6 @@ public class UserService {
         // @Transactional 있어서 자동 저장됨
     }
 
-    // 알림 설정 변경
-    @Transactional
-    public void updateNotificationSetting(String username, boolean enabled) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
-        user.updateNotificationEnabled(enabled);
-    }
 
     public FindUsernameResponse findUsername(FindUsernameRequest request) {
         User user = userRepository.findByNameAndStudentIdAndBirthDate(

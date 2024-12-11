@@ -22,6 +22,9 @@ public class User {
     private String username;
 
     @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private String password;
 
     @Column(nullable = false)
@@ -66,12 +69,13 @@ public class User {
     private LocalDateTime updatedAt;
 
     @Builder
-    public User(String username, String password, String name, String phone,
+    public User(String username,  String email, String password, String name, String phone,
                 String address, String gender, Integer studentId,
                 Integer department, String birthDate) {
         this.username = username;
         this.password = password;
         this.name = name;
+        this.email = email;
         this.phone = phone;
         this.address = address;
         this.gender = gender;

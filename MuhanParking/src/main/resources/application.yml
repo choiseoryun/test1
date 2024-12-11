@@ -1,5 +1,6 @@
 server:
-  port: 8080
+  port: 60010
+  address: 0.0.0.0
   servlet:
     context-path: /
     encoding:
@@ -11,9 +12,13 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/muhanparking?serverTimezone=Asia/Seoul
-    username: root
-    password: root
-
+    username: dbid233
+    password: dbpass233
+  security:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"
+      allowed-headers: "*"
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
