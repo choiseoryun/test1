@@ -11,6 +11,9 @@
         <module name="MuhanParking.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="MuhanParking.MuhanParking.main~1" target="17" />
+      <module name="MuhanParking.MuhanParking.test~1" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
